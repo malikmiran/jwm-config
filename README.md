@@ -18,5 +18,5 @@ for it to work correctly u need to install
     lxpolkit(ie polkit)
     libnotifyd
     xfce4-power-manager
-
+    paprius icon theme
 

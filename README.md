@@ -11,11 +11,12 @@ Tested on Manjaro architect with jwm manger(bare minimum ie cli+lightdm+jwm+neto
 
 for it to work correctly u need to install
 
-network manager
-volumeicon
-mjwm(build from https://github.com/chiku/mjwm)
-lxpolkit(ie polkit)
-libnotifyd
-xfce4-power-manager
+    network manager
+
+    volumeicon
+    mjwm(build from https://github.com/chiku/mjwm)
+    lxpolkit(ie polkit)
+    libnotifyd
+    xfce4-power-manager
 
 

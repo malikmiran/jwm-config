@@ -6,6 +6,7 @@ working on
     desktop icon
     walpaper
     desktop right click > add create new
+    search menu for apps only
 
 Tested on Manjaro architect with jwm manger(bare minimum ie cli+lightdm+jwm+netowrk+sound)
 

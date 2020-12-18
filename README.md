@@ -12,7 +12,7 @@ Tested on Manjaro architect with jwm manger(bare minimum ie cli+lightdm+jwm+neto
 for it to work correctly u need to install
 
     network manager
-
+    nautilus
     volumeicon
     mjwm(build from https://github.com/chiku/mjwm)
     lxpolkit(ie polkit)

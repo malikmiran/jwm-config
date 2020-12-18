@@ -233,7 +233,7 @@
               contained within a Desktop tag to give a specific background
               for that desktop.
          -->
-        <Background type="solid">#000000</Background>
+        <Background type="image">#000000</Background>
     </Desktops>
 
     <!-- Double click speed (in milliseconds) -->
@@ -281,7 +281,7 @@
 	<Key mask="4" key="E">exec:nautilus</Key>
 <StartupCommand>nm-applet</StartupCommand>
 <StartupCommand>volumeicon</StartupCommand>
-<StartupCommand>mjwm --no-backup -iconize</StartupCommand>
+<StartupCommand>mjwm --no-backup</StartupCommand>
 <StartupCommand>/usr/lib/lxpolkit/lxpolkit</StartupCommand>
 <StartupCommand>/usr/lib/notification-daemon-1.0/notification-daemon</StartupCommand>
 <StartupCommand>xfce4-power-manager</StartupCommand>

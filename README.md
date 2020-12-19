@@ -1,6 +1,12 @@
 # jwm-config
 my jwm config file
 
+features
+    random smooth gradient wallpaper(n each login)
+    menu reloads on login
+    made to like traditional desktop
+    tons of underhood config
+
 working on
 
     desktop icon

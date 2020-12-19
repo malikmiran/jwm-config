@@ -3,33 +3,42 @@
 
     <!-- The root menu. -->
     <RootMenu onroot="3">
-        <Program icon="terminal.png" label="Terminal">xterm</Program>
-        <Menu icon="folder.png" label="JWM">
+
+        <Program icon="xterm.svg" label="Terminal">xterm</Program>
+        <Menu icon="computersettings" label="JWM">
+<SendTo></SendTo>
+<Kill></Kill>
         <Restart label="Restart" icon="restart.png"/>
-        <Exit label="Exit" confirm="true" icon="quit.png"/>
+        <Exit label="Exit" confirm="true" icon="gnome-logout"/>
 	<Program icon="terminal.png" label="config">mousepad /home/clen/.jwmrc</Program>
+<Program label="mjwm" icon="xterm">mjwm --no-backup</Program>
         </Menu>
+<Menu icon="folder.png" label="Desktop Setting">
+<Program label="ARandR" icon="display">arandr</Program>
+exec:mjwm --no-backup
+</Menu>
 
     </RootMenu>
  
 <RootMenu onroot="a">
-        <Menu icon="folder.png" label="All Apps">
+        <Menu icon="app-launcher" label="All Apps">
 	<Include>/home/clen/.jwmrc-mjwm</Include>
         </Menu>
         <Separator/>
+
+        <Program label="Google Chrome" icon="google-chrome">/usr/bin/google-chrome-stable</Program>
+
 	<Program icon="system-file-manager.svg" label="File Manager">nautilus</Program>
 
-        <Program icon="terminal.png" label="Terminal">xterm</Program>
+        <Program icon="xterm.svg" label="Terminal">xterm</Program>
  	 <Separator/>
-
-<Exit label="Logout" confirm="true" icon="lock.png"/>
-<Program label="Restart" icon="restart.png">systemctl reboot</Program>
-<Program label="Shutdown" icon="exit">systemctl poweroff</Program>
-
+<Program label="Search App" icon="searchmonkey">xdotool key ctrl+space</Program>
+<Menu icon="gshutdown" label="Shutdown">
+<Exit label="Logout" confirm="true" icon="gnome-logout.svg"/>
+<Program label="Restart" icon="system-restart.svg">systemctl reboot</Program>
+<Program label="Shutdown" icon="gshutdown.svg">systemctl poweroff</Program>
+</Menu>
 </RootMenu>
-
-
-
 
     <!-- Options for program groups. -->
     <Group>
@@ -53,11 +62,14 @@
     <!-- Tray at the bottom. -->
     <Tray x="0" y="-1" autohide="off" height="40">
 
-        <TrayButton icon="chrome-app-list.svg">root:a</TrayButton>
+        <TrayButton icon="1CD8_rundll32.0.svg" label="Menu">root:a</TrayButton>
         <Spacer width="3"/>
         <Pager labeled="true"/>
+        <TrayButton icon="google-chrome">exec:/usr/bin/google-chrome-stable</TrayButton>
         <Spacer width="5"/>
         <TaskList labeled="false" maxwidth="256"/>
+	<TrayButton label="<">exec:xdotool key alt+0xff52</TrayButton>
+	<TrayButton label=">">exec:xdotool key alt+0xff54</TrayButton>
         <Dock/>
         <Clock format="%a,%d %b %l:%M%p"><Button mask="123">exec:gsimplecal</Button></Clock>
         <TrayButton label="||">showdesktop</TrayButton>
@@ -76,28 +88,28 @@
         <Opacity>0.5</Opacity>
         <Active>
             <Foreground>#FFFFFF</Foreground>
-            <Background>#555555</Background>
-            <Outline>#400000</Outline>
+            <Background>#000000</Background>
+            <Outline>#ffffff</Outline>
             <Opacity>1.0</Opacity>
         </Active>
     </WindowStyle>
 
-    <TrayStyle group="false" list="all">
+    <TrayStyle group="false" list="current">
         <Font>Sans-10</Font>
-        <Background>#000000</Background>
-        <Foreground>#707070</Foreground>
+        <Background>#002222</Background>
+        <Foreground>#ffffff</Foreground>
         <Outline>#252525</Outline>
-        <Opacity>0.75</Opacity>
+        <Opacity>1</Opacity>
     </TrayStyle>
 
     <TaskListStyle>
       <Font>Sans-9</Font>
       <Active>
         <Foreground>#ffffff</Foreground>
-        <Background>#252525</Background>
+        <Background>#505050</Background>
       </Active>
       <Foreground>#707070</Foreground>
-      <Background>#000000</Background>
+      <Background>#001818</Background>
     </TaskListStyle>
 
     <PagerStyle>
@@ -113,12 +125,12 @@
 
     <MenuStyle>
         <Font>Sans-13</Font>
-        <Foreground>#707070</Foreground>
-        <Background>#323232</Background>
+        <Foreground>#ffffff</Foreground>
+        <Background>#002222</Background>
         <Outline>#252525</Outline>
         <Active>
-            <Foreground>#ffffff</Foreground>
-            <Background>#252525</Background>
+            <Foreground>#000000</Foreground>
+            <Background>#ffffff</Background>
         </Active>
         <Opacity>0.85</Opacity>
     </MenuStyle>
@@ -133,22 +145,35 @@
          IconPath can be listed multiple times to allow searching
          for icons in multiple paths.
       -->
-    <IconPath>
-        /usr/share/icons/wm-icons/32x32-aquafusion
-    </IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/actions</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/apps</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/categories</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/devices</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/emblems</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/mimetypes</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/places</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/128x128/status</IconPath>
 
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/actions</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/apps</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/categories</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/devices</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/emblems</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/mimetypes</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/places</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/96x96/status</IconPath>
 
-<IconPath>/usr/share/icons/Papirus/32x32/emblems</IconPath>
-	<IconPath>/usr/share/icons/Papirus/32x32/apps</IconPath>
-	<IconPath>/usr/share/icons/Papirus/32x32/places</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/actions</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/apps</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/categories</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/devices</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/emblems</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/places</IconPath>
-	<IconPath>/usr/share/icons/Papirus-Dark/256x256/status</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/48x48/emotes</IconPath>
+
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/actions</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/apps</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/categories</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/devices</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/emblems</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/mimetypes</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/places</IconPath>
+	<IconPath>/usr/share/icons/Papirus-Dark/64x64/status</IconPath>
+
 	<IconPath>/usr/share/icons/Papirus-Dark/32x32/actions</IconPath>
 	<IconPath>/usr/share/icons/Papirus-Dark/32x32/animations</IconPath>
 	<IconPath>/usr/share/icons/Papirus-Dark/32x32/apps</IconPath>
@@ -167,64 +192,7 @@
 	<IconPath>/usr/share/icons/Papirus-Dark/scalable/places</IconPath>
 	<IconPath>/usr/share/icons/Papirus-Dark/scalable/status</IconPath>
 
-	<IconPath>/usr/share/icons/Papirus/32x32/apps</IconPath>
-	<IconPath>/usr/share/icons/Papirus/32x32/places</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/actions</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/apps</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/categories</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/devices</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/emblems</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/places</IconPath>
-	<IconPath>/usr/share/icons/gnome/256x256/status</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/actions</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/animations</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/apps</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/categories</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/devices</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/emblems</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/places</IconPath>
-	<IconPath>/usr/share/icons/gnome/32x32/status</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/actions</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/apps</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/categories</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/devices</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/emblems</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/places</IconPath>
-	<IconPath>/usr/share/icons/gnome/scalable/status</IconPath>
 
-
-
-	<IconPath>/usr/share/icons/hicolor/256x256/apps</IconPath>
-	<IconPath>/usr/share/icons/hicolor/256x256/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/hicolor/32x32/actions</IconPath>
-	<IconPath>/usr/share/icons/hicolor/32x32/apps</IconPath>
-	<IconPath>/usr/share/icons/hicolor/32x32/categories</IconPath>
-	<IconPath>/usr/share/icons/hicolor/32x32/devices</IconPath>
-	<IconPath>/usr/share/icons/hicolor/32x32/emblems</IconPath>
-	<IconPath>/usr/share/icons/hicolor/32x32/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/hicolor/32x32/status</IconPath>
-	<IconPath>/usr/share/icons/hicolor/512x512/apps</IconPath>
-	<IconPath>/usr/share/icons/hicolor/512x512/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/actions</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/apps</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/categories</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/devices</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/emblems</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/mimetypes</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/places</IconPath>
-	<IconPath>/usr/share/icons/hicolor/scalable/status</IconPath>
-
-	<IconPath>/usr/share/icons</IconPath>
-	<IconPath>/usr/share/pixmaps</IconPath>
-
-
-
-    <IconPath>
-        /home/clen/jwmicon
-    </IconPath>
 
     <!-- Virtual Desktops -->
     <!-- Desktop tags can be contained within Desktops for desktop names. -->
@@ -233,7 +201,7 @@
               contained within a Desktop tag to give a specific background
               for that desktop.
          -->
-        <Background type="image">#000000</Background>
+        <Background type="gradient">#22220:#002222</Background>
     </Desktops>
 
     <!-- Double click speed (in milliseconds) -->
@@ -243,7 +211,7 @@
     <DoubleClickDelta>2</DoubleClickDelta>
 
     <!-- The focus model (sloppy or click) -->
-    <FocusModel>sloppy</FocusModel>
+    <FocusModel>click</FocusModel>
 
     <!-- The snap mode (none, screen, or border) -->
     <SnapMode distance="10">border</SnapMode>
@@ -264,7 +232,7 @@
     <Key key="k">up</Key>
     <Key key="l">right</Key>
     <Key key="Return">select</Key>
-    <Key key="Escape">escape</Key>
+    <Key mask="C" key="e">escape</Key>
 
     <Key mask="A" key="Tab">nextstacked</Key>
     <Key mask="A" key="F4">close</Key>
@@ -276,13 +244,14 @@
     <Key mask="A" key="Left">ldesktop</Key>
     <Key mask="A" key="Up">udesktop</Key>
     <Key mask="A" key="Down">ddesktop</Key>
-	<Key mask="A" key="D">showdesktop</Key>
+	<Key mask="4" key="D">showdesktop</Key>
 	<Key mask="CA" key="T">exec:xterm</Key>
 	<Key mask="4" key="E">exec:nautilus</Key>
 <StartupCommand>nm-applet</StartupCommand>
 <StartupCommand>volumeicon</StartupCommand>
-<StartupCommand>mjwm --no-backup</StartupCommand>
+<StartupCommand>exec:mjwm --no-backup</StartupCommand>
 <StartupCommand>/usr/lib/lxpolkit/lxpolkit</StartupCommand>
 <StartupCommand>/usr/lib/notification-daemon-1.0/notification-daemon</StartupCommand>
 <StartupCommand>xfce4-power-manager</StartupCommand>
+<StartupCommand>albert</StartupCommand>
 </JWM>

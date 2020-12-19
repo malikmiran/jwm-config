@@ -9,6 +9,7 @@ features
     menu reloads on login
     made to like traditional desktop
     tons of underhood config
+    check screen shots
 
 working on
 

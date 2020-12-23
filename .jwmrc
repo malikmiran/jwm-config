@@ -6,38 +6,37 @@
 
         <Program icon="xterm.svg" label="Terminal">xterm</Program>
         <Menu icon="computersettings" label="JWM">
-<SendTo></SendTo>
-<Kill></Kill>
+	<SendTo></SendTo>
+	<Kill></Kill>
         <Restart label="Restart" icon="restart.png"/>
         <Exit label="Exit" confirm="true" icon="gnome-logout"/>
 	<Program icon="terminal.png" label="config">mousepad /home/clen/.jwmrc</Program>
-<Program label="mjwm" icon="xterm">mjwm --no-backup</Program>
+	<Program label="mjwm" icon="xterm">mjwm --no-backup</Program>
         </Menu>
-<Menu icon="folder.png" label="Desktop Setting">
-<Program label="ARandR" icon="display">arandr</Program>
-exec:mjwm --no-backup
-</Menu>
+	<Menu icon="folder.png" label="Desktop Setting">
+	<Program label="ARandR" icon="display">arandr</Program>
+	</Menu>
 
     </RootMenu>
  
 <RootMenu onroot="a">
         <Menu icon="app-launcher" label="All Apps">
 	<Include>/home/clen/.jwmrc-mjwm</Include>
-        </Menu>
-        <Separator/>
+   	</Menu>
 
-        <Program label="Google Chrome" icon="google-chrome">/usr/bin/google-chrome-stable</Program>
+       	<Separator/>
 
-	<Program icon="system-file-manager.svg" label="File Manager">nautilus</Program>
+       	<Program label="Google Chrome" icon="google-chrome">/usr/bin/google-chrome-stable</Program>
+	<Program icon="system-file-manager.svg" label="File Manager">pcmanfm</Program>
+       	<Program icon="xterm.svg" label="Terminal">xterm</Program>
 
-        <Program icon="xterm.svg" label="Terminal">xterm</Program>
- 	 <Separator/>
-<Program label="Search App" icon="searchmonkey">xdotool key ctrl+space</Program>
-<Menu icon="gshutdown" label="Shutdown">
-<Exit label="Logout" confirm="true" icon="gnome-logout.svg"/>
-<Program label="Restart" icon="system-restart.svg">systemctl reboot</Program>
-<Program label="Shutdown" icon="gshutdown.svg">systemctl poweroff</Program>
-</Menu>
+	 <Separator/>
+
+	<Menu icon="gshutdown" label="Shutdown">
+		<Exit label="Logout" confirm="true" icon="gnome-logout.svg"/>
+		<Program label="Restart" icon="system-restart.svg">systemctl reboot</Program>
+		<Program label="Shutdown" icon="gshutdown.svg">systemctl poweroff</Program>
+	</Menu>
 </RootMenu>
 
     <!-- Options for program groups. -->
@@ -246,12 +245,10 @@ exec:mjwm --no-backup
     <Key mask="A" key="Down">ddesktop</Key>
 	<Key mask="4" key="D">showdesktop</Key>
 	<Key mask="CA" key="T">exec:xterm</Key>
-	<Key mask="4" key="E">exec:nautilus</Key>
+	<Key mask="4" key="E">exec:pcmanfm</Key>
 <StartupCommand>nm-applet</StartupCommand>
 <StartupCommand>volumeicon</StartupCommand>
-<StartupCommand>exec:mjwm --no-backup</StartupCommand>
 <StartupCommand>/usr/lib/lxpolkit/lxpolkit</StartupCommand>
-<StartupCommand>/usr/lib/notification-daemon-1.0/notification-daemon</StartupCommand>
+<StartupCommand>mjwm --no-backup</StartupCommand>
 <StartupCommand>xfce4-power-manager</StartupCommand>
-<StartupCommand>albert</StartupCommand>
 </JWM>
